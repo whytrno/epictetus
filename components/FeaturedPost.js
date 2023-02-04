@@ -1,15 +1,18 @@
 import InfoPost from "@components/InfoPost"
+import Link from "next/link"
 
 export default function FeaturedPost() {
     return (
         <article>
-            <div className="flex gap-8 items-center flex-wrap md:flex-nowrap">
+            <div className="flex gap-8 lg:items-center items-start flex-wrap md:flex-nowrap">
                 <div className="w-full lg:w-8/12 md:w-7/12">
-                    <img
-                        src="/featured-thumbnail.jpg"
-                        className="rounded-md w-full"
-                        alt="featured-thumbnail"
-                    />
+                    <Link href="/detail">
+                        <img
+                            src="/featured-thumbnail.jpg"
+                            className="rounded-md w-full"
+                            alt="featured-thumbnail"
+                        />
+                    </Link>
                 </div>
                 <div className="w-full lg:w-4/12 md:5/12 space-y-5">
                     <InfoPost
@@ -23,6 +26,7 @@ export default function FeaturedPost() {
                     />
                 </div>
             </div>
+            <hr className="border-white/10 mt-10" />
         </article>
     )
 }
